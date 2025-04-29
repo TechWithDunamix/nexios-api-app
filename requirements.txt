@@ -1,0 +1,5 @@
+git+https://github.com/nexios-labs/nexios.git
+git+https://github.com/nexios-labs/voltar.git
+tortoise-orm
+tomlkit
+asyncpg
