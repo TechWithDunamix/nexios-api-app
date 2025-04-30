@@ -3,3 +3,6 @@ git+https://github.com/nexios-labs/voltar.git
 tortoise-orm
 tomlkit
 asyncpg
+granian[reload]
+aerich
+dotenv

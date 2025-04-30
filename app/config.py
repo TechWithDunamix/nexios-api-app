@@ -12,6 +12,7 @@ except ImportError:
 default_config = {
     "debug": True,
     "title": "App",
+    "secret_key": env_config.get("SECRET_KEY"),
 }
 
 # Merge env config into default config
@@ -19,7 +20,6 @@ default_config = {
 merged_config = {**default_config, **env_config}
 
 app_config = MakeConfig(merged_config)
-
 
 
 db_config = {
