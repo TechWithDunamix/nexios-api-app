@@ -15,12 +15,12 @@ UpdatePostSchema = Object({
 
 # Schema for post responses
 PostResponseSchema = Object({
-    "id": v.String(),
-    "title": v.String(),
-    "content": v.String(),
-    "author_id": v.String(),
-    "created_at": v.String(),
-    "updated_at": v.String()
+    "id": v.String().uuid(),
+    "title": v.String().default("Untitled"),
+    "content": v.String().default("Content Value"),
+    "author_id": v.String().uuid(),
+    "created_at": v.String().date(),
+    "updated_at": v.String().date()
 })
 
 # Schema for not found error
@@ -34,5 +34,5 @@ FORBIDDEN_403 = Object({
 }).pydantic_model("Forbidden")
 # Schema for listing posts
 PostsListResponseSchema = Object({
-    "posts": v.Array(PostResponseSchema)
+    "posts": v.List(PostResponseSchema)
 }).pydantic_model("PostsList")
